@@ -1,17 +1,17 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Header from "./index";
 
-let wraper;
+const setUpComponent = (props = {}) => {
+  const { container } = render(<Header {...props} />);
+  return container;
+};
 
-beforeEach(() => {
-  wraper = shallow(<Header />);
-});
 describe("Header component", () => {
+  let component;
+  beforeEach(() => (component = setUpComponent()));
+
   it("should exist", () => {
-    expect(wraper).toBeTruthy();
-  });
-  it("should contain logo name", () => {
-    expect(wraper.find("p").text()).toBe("IT Diary");
+    expect(component).toBeTruthy();
   });
 });
