@@ -1,0 +1,10 @@
+header {
+  padding: 16px;
+  box-shadow: 0 2px 10px hsla(0, 0%, 0%, 0.3);
+}
+.header {
+  &-logo {
+    font-size: 32px;
+    margin: 0;
+  }
+}
